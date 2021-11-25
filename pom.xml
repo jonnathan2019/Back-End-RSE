@@ -11,7 +11,7 @@
 	<groupId>com.sinfloo</groupId>
 	<artifactId>ejemplo01</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BACK END FINAL</name>
+	<name>BACK END FINAL PostgresSql</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
