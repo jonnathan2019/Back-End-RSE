@@ -15,5 +15,8 @@ public interface Respuestas_Indicadores_Preguntas_Service {
     
     List<Respuestas_Indicadores_Preguntas> listarRespuestasIndicadoresPreguntas();
     Respuestas_Indicadores_Preguntas instatarRespuestasIndicadoresPreguntas(Respuestas_Indicadores_Preguntas p);
+    Respuestas_Indicadores_Preguntas listarID(int id);
+    Respuestas_Indicadores_Preguntas editar(Respuestas_Indicadores_Preguntas p);
+    Respuestas_Indicadores_Preguntas eliminar(int id);
     
 }

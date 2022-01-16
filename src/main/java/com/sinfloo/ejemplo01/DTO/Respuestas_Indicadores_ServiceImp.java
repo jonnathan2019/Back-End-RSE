@@ -25,6 +25,24 @@ public class Respuestas_Indicadores_ServiceImp  implements Respuestas_Indicadore
         return respositorio.findAll();
         
     }
-    
+
+    @Override
+    public Respuestas_Indicadores listarID(int id) {
+        return respositorio.findOne(id);
+    }
+
+    @Override
+    public Respuestas_Indicadores editar(Respuestas_Indicadores p) {
+        return respositorio.save(p);
+    }
+
+    @Override
+    public Respuestas_Indicadores eliminar(int id) {
+        Respuestas_Indicadores p = respositorio.findOne(id);
+        if(p!=null){//comprobamos si el objeto existe
+            respositorio.delete(p);
+        }
+        return p;
+    }
     
 }

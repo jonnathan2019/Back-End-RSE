@@ -14,7 +14,7 @@ public class Respuestas_Indicadores_PreguntasImp implements Respuestas_Indicador
 
     @Autowired
     Respuestas_Indicadores_Preguntas_Repositorio repositorio;
-    
+
     @Override
     public List<Respuestas_Indicadores_Preguntas> listarRespuestasIndicadoresPreguntas() {
         return repositorio.findAll();
@@ -23,6 +23,25 @@ public class Respuestas_Indicadores_PreguntasImp implements Respuestas_Indicador
     @Override
     public Respuestas_Indicadores_Preguntas instatarRespuestasIndicadoresPreguntas(Respuestas_Indicadores_Preguntas p) {
         return repositorio.save(p);
+    }
+
+    @Override
+    public Respuestas_Indicadores_Preguntas listarID(int id) {
+        return repositorio.findOne(id);
+    }
+
+    @Override
+    public Respuestas_Indicadores_Preguntas editar(Respuestas_Indicadores_Preguntas p) {
+        return repositorio.save(p);
+    }
+
+    @Override
+    public Respuestas_Indicadores_Preguntas eliminar(int id) {
+        Respuestas_Indicadores_Preguntas p = repositorio.findOne(id);
+        if (p != null) {//comprobamos si el objeto existe
+            repositorio.delete(p);
+        }
+        return p;
     }
     
     
