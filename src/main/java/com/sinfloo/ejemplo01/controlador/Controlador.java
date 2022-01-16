@@ -49,6 +49,22 @@ public class Controlador {
     public Respuestas_Indicadores agregarRespuestasIndicadores(@RequestBody Respuestas_Indicadores p) {
         return serviceRespuestas_Indicadores_Servicee.insertarRespuestaIndicador(p);
     }
+    
+    @GetMapping(path = {"/respuestasIndicadoresId/{id}"})
+    public Respuestas_Indicadores listarIdRespuestasIndicador(@PathVariable("id") int id) {
+        return serviceRespuestas_Indicadores_Servicee.listarID(id);
+    }
+    
+    @PutMapping(path = {"/actualizarRespuestasIndicadores/{id}"})//https://www.youtube.com/watch?v=-nzB6HIiGqQ
+    public Respuestas_Indicadores editarRespuestasIndicador(@RequestBody Respuestas_Indicadores p, @PathVariable("id") int id) {
+        p.setRespuestas_Indicadores_ID(id);
+        return serviceRespuestas_Indicadores_Servicee.editar(p);
+    }
+    
+    @DeleteMapping(path = {"/eliminarRespuestasIndicadores/{id}"})
+    public Respuestas_Indicadores eliminarRespuestasIndicador(@PathVariable("id") int id) {
+        return serviceRespuestas_Indicadores_Servicee.eliminar(id);
+    }
 
     //Obtenemos e ingresamo datos en la tabla "respuestas_indicadores_preguntas" que tiene las respuesas de a
     //las preguntas de los indicadores seleccionados por el usuario
@@ -64,7 +80,23 @@ public class Controlador {
     public Respuestas_Indicadores_Preguntas agregarRespestasIndicadoresPreguntas(@RequestBody Respuestas_Indicadores_Preguntas p) {
         return serviceRespuestas_Indicadores_Preguntas_Service.instatarRespuestasIndicadoresPreguntas(p);
     }
+    
+    @GetMapping(path = {"/respuestasIndicadoresPreguntasId/{id}"})
+    public Respuestas_Indicadores_Preguntas listarIdRespuestasIndicadorId(@PathVariable("id") int id) {
+        return serviceRespuestas_Indicadores_Preguntas_Service.listarID(id);
+    }
 
+    
+    @PutMapping(path = {"/actualizarRespuestasIndicadoresPregutas/{id}"})//https://www.youtube.com/watch?v=-nzB6HIiGqQ
+    public Respuestas_Indicadores_Preguntas editarRespuestasIndicadorPreguntas(@RequestBody Respuestas_Indicadores_Preguntas p, @PathVariable("id") int id) {
+        p.setRespuestas_Indicadores_Preguntas_ID(id);
+        return serviceRespuestas_Indicadores_Preguntas_Service.editar(p);
+    }
+    
+    @DeleteMapping(path = {"/eliminarRespuestasIndicadoresPreguntas/{id}"})
+    public Respuestas_Indicadores_Preguntas eliminarRespuestasIndicadorPreguntas(@PathVariable("id") int id) {
+        return serviceRespuestas_Indicadores_Preguntas_Service.eliminar(id);
+    }
     //____________________________
     @Autowired
     Encuestado_Pregunta_CualitativaService serviceEncuestado_Pregunta_CualitativaService;
