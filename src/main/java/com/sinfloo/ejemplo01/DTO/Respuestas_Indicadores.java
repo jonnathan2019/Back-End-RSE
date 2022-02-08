@@ -24,6 +24,9 @@ public class Respuestas_Indicadores {
     @ManyToOne
     @JoinColumn (name = "Indicador_ID")
     private Indicador indicador;
+    
+    @Column(name = "cometario_usuario")
+    private String cometario_usuario;
 
     public int getRespuestas_Indicadores_ID() {
         return Respuestas_Indicadores_ID;
@@ -48,8 +51,14 @@ public class Respuestas_Indicadores {
     public void setIndicador(Indicador indicador) {
         this.indicador = indicador;
     }
-    
-    
+
+    public String getCometario_usuario() {
+        return cometario_usuario;
+    }
+
+    public void setCometario_usuario(String cometario_usuario) {
+        this.cometario_usuario = cometario_usuario;
+    }
     
     
 }
