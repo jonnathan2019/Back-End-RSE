@@ -19,6 +19,10 @@ public class Encuestado {
     private String apellido;
     @Column (name = "correo")
     private String correo;
+    @Column (name = "terminos_aceptacion")
+    private String terminos_aceptacion;
+    @Column (name = "tipo_cuenta")
+    private String tipo_cuenta;
     
     @OneToOne
     @JoinColumn (name = "Empresa_ID")
@@ -93,6 +97,22 @@ public class Encuestado {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+    public String getTerminos_aceptacion() {
+        return terminos_aceptacion;
+    }
+
+    public void setTerminos_aceptacion(String terminos_aceptacion) {
+        this.terminos_aceptacion = terminos_aceptacion;
+    }
+
+    public String getTipo_cuenta() {
+        return tipo_cuenta;
+    }
+
+    public void setTipo_cuenta(String tipo_cuenta) {
+        this.tipo_cuenta = tipo_cuenta;
     }
 
     

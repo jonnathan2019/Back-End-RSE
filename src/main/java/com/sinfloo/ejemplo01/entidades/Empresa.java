@@ -40,12 +40,13 @@ public class Empresa {
     private String RUC_empresa;
 
     @Column(name = "fecha_inicio_operciones")
-    private Date fecha_inicio_operciones;
+    private String fecha_inicio_operciones;
     
     @Column(name = "estimado_ingresos")
     private int estimado_ingresos;
 
-    
+    @Column(name = "terminos_aceptacion")
+    private String terminos_aceptacion;
 
     @JsonIgnore
     @OneToOne(mappedBy = "empresa")
@@ -131,20 +132,28 @@ public class Empresa {
         this.numero_sedes = numero_sedes;
     }
 
-    public Date getFecha_inicio_operciones() {
+    public String getFecha_inicio_operciones() {
         return fecha_inicio_operciones;
     }
 
-    public void setFecha_inicio_operciones(Date fecha_inicio_operciones) {
+    public void setFecha_inicio_operciones(String fecha_inicio_operciones) {
         this.fecha_inicio_operciones = fecha_inicio_operciones;
     }
-
+    
     public int getEstimado_ingresos() {
         return estimado_ingresos;
     }
 
     public void setEstimado_ingresos(int estimado_ingresos) {
         this.estimado_ingresos = estimado_ingresos;
+    }
+
+    public String getTerminos_aceptacion() {
+        return terminos_aceptacion;
+    }
+
+    public void setTerminos_aceptacion(String terminos_aceptacion) {
+        this.terminos_aceptacion = terminos_aceptacion;
     }
     
     
